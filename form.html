@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Create New Article</h1>
+
+<input type='text' id='title' placeholder='Title'> </br>
+
+<textarea id='content' placeholder='Content'></textarea>
+
+<button id='submit'>Submit</button>
+
+
+
+<script
+src="https://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
+
+
+<script>
+  var article = {title:'', content:''};
+  
+  $('#submit').click(function(event){
+    article.title = $('#title').val();
+    article.content = $('#content').val();
+    $.ajax(
+      {
+        method:'POST',
+        url:'/article/create',
+        data:article
+      }).done(function(response){
+            console.log(response);
+      }).fail(function(response){
+            console.log(response);
+      });
+  })
+  
+  
+</script>
+			  
+			  
+
+<!--<form action="/action_page.php">-->
+<!--  First name:<br>-->
+<!--  <input type="text" name="firstname" value="Mickey">-->
+<!--  <br>-->
+<!--  Last name:<br>-->
+<!--  <input type="text" name="lastname" value="Mouse">-->
+<!--  <br><br>-->
+<!--  <input type="submit" value="Submit">-->
+<!--</form> -->
+
+<!--<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>-->
+
+</body>
+</html>
