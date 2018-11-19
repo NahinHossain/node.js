@@ -1,29 +1,4 @@
 
-Skip to content
-
-    Pull requests
-    Issues
-    Marketplace
-    Explore
-
-    @NahinHossain
-
-1
-0
-
-    0
-
-ScarletMcLearn/node-js-server
-Code
-Issues 0
-Pull requests 0
-Projects 0
-Wiki
-Insights
-node-js-server/server.js
-0495ddb 2 hours ago
-@ScarletMcLearn ScarletMcLearn Add files via upload
-295 lines (206 sloc) 7.86 KB
 // // //  var http = require('http');
 // // //  var fs = require('fs');
  
