@@ -9,16 +9,19 @@
 <body>
     <h1>New Article</h1>
     <input type="text" id="title" placeholder="Title"> <br>
+    <input type="number" id="reading_time" placeholder="Reading Time" min="1" required> <br>
     <textarea id="content" placeholder="Content"></textarea>
     <button id="submit">Submit</button>
     <button id="list" id="list">Get the list of all articles</button>
     
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script type="text/javascript">
-        var article = {title:"", content:""};
+        var article = {title:"", content:"", reading_time:""};
         $('#submit').click(function(event){
             article.title = $('#title').val();
             article.content = $('#content').val();
+            article.reading_time = $('#reading_time').val();
+            console.log(article)
             $.ajax({
                 method: "POST",
                 url:"/article/create",
